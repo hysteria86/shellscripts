@@ -21,7 +21,7 @@ if [ Y == $YN_Check ]; then
 elif [ N == $YN_Check ]; then
         sed -i 's/Data_145 N/Data_145 Y/' $YN_Check_File
         sleep 3
-        rsync -az --delete --bwlimit=4096 --exclude-from '/home/KTSRC/sync_pattern_DATA.txt' -e ssh root@45.58.10.90:/home/KTSRC/data/ /home/KTSRC/data/
+        rsync -az --delete --bwlimit=4096 --exclude-from '/home/batch/sync_pattern_DATA.txt' -e ssh root@45.58.10.90:/home/batch/data/ /home/batch/data/
         sed -i 's/Data_145 Y/Data_145 N/' $YN_Check_File
 fi
 
